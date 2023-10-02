@@ -1,0 +1,12 @@
+.dish {
+    width: 20rem;
+
+    .dish-image {
+        width: 100%; /* You can set the dimensions to whatever you want */
+        height: 200px;
+        object-fit: cover; 
+        align-self: center;
+    }
+
+}
+

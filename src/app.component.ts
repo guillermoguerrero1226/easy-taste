@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CreateUserUseCase, UserState, UserType } from 'src/domain/user';
+import { GetDishesUseCase } from './domain/dish/usecases/GetDishesUseCase';
 
 @Component({
   selector: 'app-root',
@@ -8,24 +9,6 @@ import { CreateUserUseCase, UserState, UserType } from 'src/domain/user';
 })
 export class AppComponent {
   title = 'easy-taste';
-
-
-constructor(
-    private userUseCase: CreateUserUseCase
-  ) { }
-
-  ngOnInit() {
-     const user =  this.userUseCase.execute({
-      id: "1234",
-      fullName: "Guillermo Guerrero",
-      phoneNum: "+573213350338",
-      email: "guillermoguerrero1226@gmail.com",
-      state: UserState.Active,
-      type: UserType.Admin
-    })
-
-    user.subscribe((user) => console.log(JSON.stringify(user)));
-  }
 
 }
 

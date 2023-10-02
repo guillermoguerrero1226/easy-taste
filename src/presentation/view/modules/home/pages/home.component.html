@@ -1,4 +1,16 @@
 
-<span>{{ title }} Home!</span>
-   
-<router-outlet></router-outlet>
+<nav class="navbar navbar-header">
+  <div class="container-fluid  d-flex justify-content-center">
+    <a class="navbar-brand text-white " href="#">{{title}}</a>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="input-group my-3">
+    <input type="text" class="form-control" placeholder="Buscar plato" aria-label="Search" aria-describedby="search-button">
+    <button class="btn btn-primary" type="button" id="search-button">Buscar</button>
+  </div>
+ 
+  <div class="d-flex flex-row flex-nowrap overflow-auto">
+    <div class="px-1" *ngFor="let dish of dishesToDisplay"><app-dish [dish]="dish"></app-dish></div>
+</div>
+</div>
